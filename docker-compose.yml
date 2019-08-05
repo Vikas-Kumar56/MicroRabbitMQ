@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  microrabbitmq.banking.api:
+    image: ${DOCKER_REGISTRY-}microrabbitmqbanking
+    build:
+      context: .
+      dockerfile: MicroRabbitMQ.Banking.API/Dockerfile
