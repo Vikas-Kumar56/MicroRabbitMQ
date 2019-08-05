@@ -1,10 +1,13 @@
 ﻿using System;
 namespace MicroRabbitMQ.Domain.Core.Events
 {
-    public class Event
+    public abstract class Event
     {
-        public Event()
+        public DateTime Timestamp { get; protected set; }
+
+        protected Event()
         {
+            Timestamp = DateTime.Now;
         }
     }
 }

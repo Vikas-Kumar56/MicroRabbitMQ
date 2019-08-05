@@ -4,4 +4,17 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MicroRabbitMQ.Domain.Core\MicroRabbitMQ.Domain.Core.csproj" />
+    <ProjectReference Include="..\MicroRabbitMQ.Infrastructure.Bus\MicroRabbitMQ.Infrastructure.Bus.csproj" />
+    <ProjectReference Include="..\MicroRabbitMQ.Banking.Application\MicroRabbitMQ.Banking.Application.csproj" />
+    <ProjectReference Include="..\MicroRabbitMQ.Banking.Data\MicroRabbitMQ.Banking.Data.csproj" />
+    <ProjectReference Include="..\MicroRabbitMQ.Banking.Domain\MicroRabbitMQ.Banking.Domain.csproj" />
+  </ItemGroup>
 </Project>

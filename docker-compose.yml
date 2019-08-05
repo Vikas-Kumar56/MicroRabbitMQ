@@ -1,8 +1,13 @@
 version: '3.4'
 
 services:
+  sql.data:
+    image: microsoft/mssql-server-linux:2017-latest
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
   microrabbitmq.banking.api:
     image: ${DOCKER_REGISTRY-}microrabbitmqbanking
     build:
       context: .
       dockerfile: MicroRabbitMQ.Banking.API/Dockerfile
+   

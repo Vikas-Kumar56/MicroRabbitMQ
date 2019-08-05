@@ -1,10 +1,15 @@
 ﻿using System;
+using MicroRabbitMQ.Domain.Core.Events;
+
 namespace MicroRabbitMQ.Domain.Core.Commands
 {
-    public class Command
+    public abstract class Command : Message
     {
-        public Command()
+        public DateTime Timestamp { get; protected set; }
+
+        protected Command()
         {
+            Timestamp = DateTime.Now;
         }
     }
 }

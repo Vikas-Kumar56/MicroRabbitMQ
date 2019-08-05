@@ -1,10 +1,31 @@
 ﻿using System;
+using MicroRabbitMQ.Domain.Core.Bus;
+using MicroRabbitMQ.Infrastructure.Bus;
+using Microsoft.Extensions.DependencyInjection;
+using MicroRabbitMQ.Banking.Application.Interfaces;
+using MicroRabbitMQ.Banking.Application.Services;
+using MicroRabbitMQ.Banking.Data.Repository;
+using MicroRabbitMQ.Banking.Domain.Interfaces;
+using MicroRabbitMQ.Banking.Data.Context;
+
 namespace MicroRabbitMQ.Infrastucture.Ioc
 {
-    public class DependencyContainer
+    public static class DependencyContainer
     {
-        public DependencyContainer()
+        public static void RegisterServices(IServiceCollection services)
         {
+            services.AddTransient<IEventBus, RabbitMQBus>();
+
+            // Application services
+            services.AddTransient<IAccountService, AccountService>();
+
+            //Data
+            services.AddTransient<IAccountRepository, AccountRepository>();
+
+            //entity framework dbcontext, Banking
+            services.AddTransient<BankingDBContext>();
+
+            
         }
     }
 }

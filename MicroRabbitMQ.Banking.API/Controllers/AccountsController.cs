@@ -12,14 +12,14 @@ namespace MicroRabbitMQ.Banking.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BankController : ControllerBase
+    public class AccountsController : ControllerBase
     {
         private IAccountService accountService;
-        public BankController(IAccountService accountService)
+        public AccountsController(IAccountService accountService)
         {
             this.accountService = accountService;
         }
-        // GET api/account
+        // GET api/accounts
         [HttpGet]
         public ActionResult<IEnumerable<Account>> Get()
         {
