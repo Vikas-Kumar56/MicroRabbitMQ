@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MicroRabbitMQ.Infrastucture.Ioc\MicroRabbitMQ.Infrastucture.Ioc.csproj" />
+    <ProjectReference Include="..\..\..\MicroRabbitMQ.Infrastucture.Ioc\MicroRabbitMQ.Infrastucture.Ioc.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Dockerfile" />

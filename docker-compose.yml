@@ -1,4 +1,4 @@
-version: '3.4'
+version: "3.4"
 
 services:
   sql.data:
@@ -9,5 +9,4 @@ services:
     image: ${DOCKER_REGISTRY-}microrabbitmqbanking
     build:
       context: .
-      dockerfile: MicroRabbitMQ.Banking.API/Dockerfile
-   
+      dockerfile: Microservices/Banking/MicroRabbitMQ.Banking.API/Dockerfile

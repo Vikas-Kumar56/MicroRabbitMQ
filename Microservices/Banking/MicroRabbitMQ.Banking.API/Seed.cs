@@ -21,14 +21,16 @@ namespace MicroRabbitMQ.Banking.API
         {
             using (bankingDBContext)
             {
+               
                 bankingDBContext.Database.Migrate();
                 bankingDBContext.Database.EnsureCreated();
-              
-
+                
+                System.Console.WriteLine("Enter seed *****");
+                System.Console.WriteLine(bankingDBContext);
                 if (!bankingDBContext.Accounts.Any())
                 {
                     bankingDBContext.Accounts.AddRange(
-                   GetAccounts()
+                     GetAccounts()
                    );
                     await bankingDBContext.SaveChangesAsync();
                 }
@@ -43,13 +45,13 @@ namespace MicroRabbitMQ.Banking.API
                 new Account()
                 {
                     AccountType = "Saving",
-                    Id = 1,
+                    
                     AcountBalance = 12
                 },
                 new Account()
                 {
                     AccountType = "Current",
-                    Id = 2,
+                    
                     AcountBalance = 34
                 }
             };

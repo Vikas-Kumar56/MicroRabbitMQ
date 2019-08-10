@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,8 +13,8 @@
   <ItemGroup>
     <ProjectReference Include="..\MicroRabbitMQ.Domain.Core\MicroRabbitMQ.Domain.Core.csproj" />
     <ProjectReference Include="..\MicroRabbitMQ.Infrastructure.Bus\MicroRabbitMQ.Infrastructure.Bus.csproj" />
-    <ProjectReference Include="..\MicroRabbitMQ.Banking.Application\MicroRabbitMQ.Banking.Application.csproj" />
-    <ProjectReference Include="..\MicroRabbitMQ.Banking.Data\MicroRabbitMQ.Banking.Data.csproj" />
-    <ProjectReference Include="..\MicroRabbitMQ.Banking.Domain\MicroRabbitMQ.Banking.Domain.csproj" />
+    <ProjectReference Include="..\Microservices\Banking\MicroRabbitMQ.Banking.Application\MicroRabbitMQ.Banking.Application.csproj" />
+    <ProjectReference Include="..\Microservices\Banking\MicroRabbitMQ.Banking.Data\MicroRabbitMQ.Banking.Data.csproj" />
+    <ProjectReference Include="..\Microservices\Banking\MicroRabbitMQ.Banking.Domain\MicroRabbitMQ.Banking.Domain.csproj" />
   </ItemGroup>
 </Project>
