@@ -28,13 +28,13 @@ namespace MicroRabbitMQ.Banking.API
             {
                 option.UseSqlServer(Configuration["ConnectionString"],
 
-                    sqlServerOptionsAction:sqlOptions =>
-                    {
-                        sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
+                    sqlServerOptionsAction: sqlOptions =>
+                     {
+                         sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
                         //Configuring Connection Resiliency:
                         sqlOptions.EnableRetryOnFailure(maxRetryCount: 5, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
 
-                    });
+                     });
 
 
             });
@@ -42,7 +42,7 @@ namespace MicroRabbitMQ.Banking.API
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info { Title = "Banking Microservice API", Version = "v1" });
+                c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info { Title = "Bankinf Microservice API", Version = "v1" });
             });
 
             services.AddMediatR(typeof(Startup));
@@ -51,13 +51,13 @@ namespace MicroRabbitMQ.Banking.API
 
         private void RegisterServices(IServiceCollection services)
         {
-            
-            DependencyContainer.RegisterServices(services);       
+
+            DependencyContainer.RegisterServices(services);
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env,BankingDBContext context)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, BankingDBContext context)
         {
             if (env.IsDevelopment())
             {
@@ -68,9 +68,9 @@ namespace MicroRabbitMQ.Banking.API
                 app.UseHsts();
             }
 
-           
+
             app.UseHttpsRedirection();
-    
+
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
@@ -80,5 +80,6 @@ namespace MicroRabbitMQ.Banking.API
             new Seed(context).SeedAsync().Wait();
             app.UseMvc();
         }
+
     }
 }

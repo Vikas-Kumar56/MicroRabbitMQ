@@ -12,9 +12,9 @@ COPY MicroRabbitMQ.Infrastructure.Bus/MicroRabbitMQ.Infrastructure.Bus.csproj Mi
 COPY Microservices/Banking/MicroRabbitMQ.Banking.Application/MicroRabbitMQ.Banking.Application.csproj Microservices/Banking/MicroRabbitMQ.Banking.Application/
 COPY Microservices/Banking/MicroRabbitMQ.Banking.Domain/MicroRabbitMQ.Banking.Domain.csproj Microservices/Banking/MicroRabbitMQ.Banking.Domain/
 COPY Microservices/Banking/MicroRabbitMQ.Banking.Data/MicroRabbitMQ.Banking.Data.csproj Microservices/Banking/MicroRabbitMQ.Banking.Data/
-RUN dotnet restore "MicroRabbitMQ.Banking.API/MicroRabbitMQ.Banking.API.csproj"
+RUN dotnet restore "Microservices/Banking/MicroRabbitMQ.Banking.API/MicroRabbitMQ.Banking.API.csproj"
 COPY . .
-WORKDIR "/src/MicroRabbitMQ.Banking.API"
+WORKDIR "/src/Microservices/Banking/MicroRabbitMQ.Banking.API"
 RUN dotnet build "MicroRabbitMQ.Banking.API.csproj" -c Release -o /app
 
 FROM build AS publish

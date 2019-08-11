@@ -21,3 +21,19 @@ services:
       - ACCEPT_EULA=Y
     ports:
       - "5434:1433"
+  sql.data.transfer:
+    environment:
+      - SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - "5435:1433"
+  microrabbitmq.transfer.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionString=Server=sql.data.transfer;Database=transferDB;User=sa;Password=Pass@word
+    ports:
+      - "3001:80"
+    depends_on:
+      - rabbitmq
+      - sql.data.transfer
+    

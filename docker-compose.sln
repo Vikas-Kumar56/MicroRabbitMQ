@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D1195530-6A4E-4894-806E-D5C91BA1BB95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1195530-6A4E-4894-806E-D5C91BA1BB95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1195530-6A4E-4894-806E-D5C91BA1BB95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1195530-6A4E-4894-806E-D5C91BA1BB95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1195530-6A4E-4894-806E-D5C91BA1BB95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
